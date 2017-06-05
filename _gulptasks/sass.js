@@ -1,0 +1,37 @@
+import gulp from 'gulp';
+import paths  from '../gulp.paths.json';
+
+import sass  from 'gulp-sass';
+import sourcemaps  from 'gulp-sourcemaps';
+import prefixer  from 'gulp-autoprefixer';
+import cssmin from 'gulp-minify-css';
+
+import env from 'gulp-environments';
+import browserSync from "browser-sync";
+
+export default ()=> {
+    return gulp.src(paths.src.style)
+        .pipe(
+            env.development(
+                sourcemaps.init()
+            )
+        )
+        .pipe(sass({
+            includePaths: ['src/scss/','node_modules/foundation-sites/scss',],
+            outputStyle: 'expanded',
+            sourceMap: false,
+            errLogToConsole: true
+        }))
+        .on('error', sass.logError)
+        .pipe(
+            env.production(
+                prefixer({browserslist: ['> 1%', 'IE >= 9'], cascade: true, remove: false, flexbox: true})
+            )
+        )
+
+        .pipe(env.production(cssmin()))
+        .pipe(env.development(sourcemaps.write()))
+        .pipe(gulp.dest(paths.build.css))
+        .pipe(browserSync.reload({stream: true}))
+        ;
+}

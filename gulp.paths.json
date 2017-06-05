@@ -1,0 +1,28 @@
+{
+    "build": {
+        "html": "build/",
+        "js": "build/js/",
+        "css": "build/css/",
+        "img": "build/",
+        "pic": "build/pic/",
+        "fonts": "build/font/"
+    },
+    "src": {
+        "html": "src/twig",
+        "js": "src/js/*.js",
+        "js_libs": "src/js/libs/*.js",
+        "style": "src/scss/style.scss",
+        "img": ["src/img/**/*.*","src/pic/**/*.*"],
+        "pic": "src/pic/**/*.*",
+        "fonts": "src/font/**/*.*"
+    },
+    "watch": {
+        "html": "src/twig/**/*.twig",
+        "js": ["src/js/**/*.js","!src/js/libs/**/*.js"],
+        "js_libs": "src/js/libs/*.*",
+        "style": "src/scss/**/*.scss",
+        "img": ["src/img/**/*.*","src/pic/**/*.*"],
+        "fonts": "src/font/**/*.*"
+    },
+    "clean": "./build"
+}
