@@ -14,7 +14,7 @@ export default ()=>{
             gulp.start('build:js');
         });
         watch(paths.watch.img, (event, cb) =>{
-            gulp.start('build:img');
+            gulp.start('build:image');
         });
         watch([paths.watch.fonts], (event, cb) =>{
             gulp.start('build:font');
