@@ -42,8 +42,8 @@
 @include foundation-float-classes
 //@include foundation-everything;
 
-@import "lib/_index";
-@import "app/_index";
+@import "lib/**/*.scss";
+@import "app/**/*.scss";
 
 
 

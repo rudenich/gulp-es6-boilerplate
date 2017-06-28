@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import paths  from '../gulp.paths.json';
 
 import sass  from 'gulp-sass';
+import sassGlob  from 'gulp-sass-glob';
 import sourcemaps  from 'gulp-sourcemaps';
 import prefixer  from 'gulp-autoprefixer';
 import cssmin from 'gulp-minify-css';
@@ -16,6 +17,11 @@ export default ()=> {
                 sourcemaps.init()
             )
         )
+        .pipe(sassGlob({
+            ignorePaths: [
+                '**/__*.scss'
+            ]
+        }))
         .pipe(sass({
             includePaths: ['src/scss/','node_modules/foundation-sites/scss',],
             outputStyle: 'expanded',
