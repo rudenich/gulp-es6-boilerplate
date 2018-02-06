@@ -19,7 +19,7 @@
     "watch": {
         "html": "src/twig/**/*.twig",
         "js": ["src/js/**/*.js","!src/js/libs/**/*.js"],
-        "js_libs": "src/js/libs/*.*",
+        "js_libs": "src/js/libs/**/*.*",
         "style": "src/scss/**/*.scss",
         "img": ["src/img/**/*.*","src/pic/**/*.*"],
         "fonts": "src/font/**/*.*"
