@@ -23,7 +23,7 @@ export default ()=> {
             ]
         }))
         .pipe(sass({
-            includePaths: ['src/scss/','node_modules/foundation-sites/scss',],
+            includePaths: ['src/scss/','bower_components/foundation-sites/scss',],
             outputStyle: 'expanded',
             sourceMap: false,
             errLogToConsole: true

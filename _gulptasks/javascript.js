@@ -15,7 +15,7 @@ export default ()=>{
     gulp.src(paths.src.js)
         .pipe(rollup({
             allowRealFiles: true,
-            entry:['src/js/app.js'],
+            input:['src/js/app.js'],
             format:'iife',
             external: ['jquery'],
             globals: {
