@@ -1,8 +1,9 @@
 import browserSync from "browser-sync";
 
-const config = {
+
+let config = {
     server: {
-        baseDir: "./build"
+        baseDir: "./build",
     },
     tunnel: false,
     host: 'localhost',
@@ -10,6 +11,9 @@ const config = {
     logPrefix: "UltraWEB"
 };
 
-export default ()=> {
+export default (settings)=> {
+    if(settings.env.development()){
+        config.server.middleware = settings.fs.middleware
+    }
     browserSync(config);
 }

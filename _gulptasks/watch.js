@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import watch from 'gulp-watch';
 import paths from '../gulp.paths.json';
 
-export default ()=>{
+export default (settigs)=>{
     gulp.task('watch',  () => {
         watch([paths.watch.html],  (event, cb) => {
             gulp.start('build:html');

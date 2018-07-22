@@ -2,10 +2,10 @@
 @import "foundation";
 
 @include foundation-global-styles;
-@include foundation-grid;
+//@include foundation-grid;
 @include foundation-flex-grid;
 @include foundation-flex-classes;
-@include foundation-typography;
+/*@include foundation-typography;
 @include foundation-forms;
 @include foundation-button;
 @include foundation-accordion;
@@ -39,11 +39,13 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 @include foundation-visibility-classes;
-@include foundation-float-classes
+@include foundation-float-classes*/
 //@include foundation-everything;
 
 @import "lib/**/*.scss";
 @import "app/**/*.scss";
 
+
+body{color: green;}
 
 

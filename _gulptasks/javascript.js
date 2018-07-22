@@ -1,4 +1,3 @@
-import paths  from '../gulp.paths.json';
 import gulp from 'gulp';
 
 import rollup from 'gulp-rollup';
@@ -7,12 +6,12 @@ import commonjs from 'rollup-plugin-commonjs';
 import rollupBabel from 'rollup-plugin-babel';
 import uglify  from 'gulp-uglify';
 
-import env from 'gulp-environments';
+
 import browserSync from "browser-sync";
 
 
-export default ()=>{
-    gulp.src(paths.src.js)
+export default (settings)=>{
+    gulp.src(settings.paths.src.js)
         .pipe(rollup({
             allowRealFiles: true,
             input:['src/js/app.js'],
@@ -50,9 +49,9 @@ export default ()=>{
         }))
         .on('error',(error)=>{console.log(error)})
 
-        .pipe(env.production(uglify()))
+        .pipe(settings.env.production(uglify()))
 
-        .pipe(gulp.dest(paths.build.js))
+        .pipe(settings.fs.dest(settings.paths.build.js))
         .pipe(browserSync.reload({stream: true, once: true}))
     ;
 }
