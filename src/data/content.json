@@ -1,4 +1,6 @@
 {
+  "title":"Gulp ES6 boilerplate",
+  "description":"Complete gulp boilerplate for quick start with ES6 babel twig sass",
   "home":{
     "title":"Gulp  boilerplate"
   }
