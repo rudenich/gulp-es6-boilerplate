@@ -15,11 +15,11 @@ import browserSync from "browser-sync";
 
 export default (settings)=> {
     return gulp.src(settings.paths.src.style)
-        .pipe(
+        /*.pipe(
             settings.env.development(
                 sourcemaps.init()
             )
-        )
+        )*/
         .pipe(sassGlob({
             ignorePaths: [
                 '**/__*.scss'
@@ -39,7 +39,7 @@ export default (settings)=> {
         )
 
         .pipe(settings.env.production(cssmin()))
-        .pipe(settings.env.development(sourcemaps.write()))
+        //.pipe(settings.env.development(sourcemaps.write()))
         .pipe(settings.fs.dest(settings.paths.build.css))
         .pipe(browserSync.reload({stream: true}))
         ;
