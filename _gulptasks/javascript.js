@@ -12,10 +12,10 @@ import browserSync from "browser-sync";
 
 
 export default ()=>{
-    gulp.src(paths.src.js)
+    return gulp.src(paths.src.js)
         .pipe(rollup({
             allowRealFiles: true,
-            entry:['src/js/app.js'],
+            input:['src/js/app.js'],
             format:'iife',
             external: ['jquery'],
             globals: {
@@ -34,15 +34,21 @@ export default ()=>{
                 }),
                 rollupBabel({
                     exclude: 'node_modules/**', // only transpile our source code
-                    presets: [
+                    /*presets: [
                         ["latest", {
                             "es2015": {
                                 "modules": false
                             }
                         }]
-                    ],
+                    ],*/
+					presets: [
+					  ["@babel/preset-env", {
+						modules: false,
+						loose: true,
+					  }],
+					],
                     plugins: [
-                        "external-helpers"
+                        "@babel/external-helpers"
                     ],
                     babelrc: false
                 })
