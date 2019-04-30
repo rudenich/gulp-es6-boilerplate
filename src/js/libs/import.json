@@ -1,3 +1,5 @@
 [
-  "bower_components/foundation-sites/dist/js/foundation.js"
+  "bower_components/foundation-sites/dist/js/foundation.js",
+  "src/js/libs/ordered/lib-a.js",
+  "src/js/libs/ordered/lib-b.js"
 ]

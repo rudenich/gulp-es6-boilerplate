@@ -9,6 +9,7 @@ A toolkit for quick start developing with: twig, rollup.js, sass, foundation.
 1. gulpfile and tasks written with es6 syntax
 1. [twig](https://twig.sensiolabs.org/) template engine
 1. [sass](http://sass-lang.com/) css preprocessor
+1. [gulp-sass-glob](https://www.npmjs.com/package/gulp-sass-glob/) Gulp plugin for gulp-sass to use glob imports. 
 1. [foundation](http://foundation.zurb.com/) framework
 1. image minification
 
@@ -31,7 +32,7 @@ A toolkit for quick start developing with: twig, rollup.js, sass, foundation.
 \-in *production* additionally minify js
 - **build:js-libs** - concat javascript files from  directory `src/js/libs`
  and from file `src/js/libs/import.json` (used for import code from node_modules)
-- **build:style** - compile scss to css  
+- **build:style** - compile scss to css. gulp-sass-glob configured to ignore files witch started with double underscore `__*.scss`  
 \- in *production*: minify and prefix  
 \- in *development*: write soursemaps
 - **build:image** - simply copy images from pic and img to build folder  
