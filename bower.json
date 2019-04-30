@@ -1,0 +1,31 @@
+{
+  "name": "gulp-es6-boilerplate",
+  "description": "Gulp boilerplate  for html,js,css apps",
+  "main": "",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sass",
+    "scss",
+    "babel",
+    "rollup.js",
+    "foundation",
+    "es6",
+    "twig",
+    "boilerplate",
+    "gulp"
+  ],
+  "homepage": "https://github.com/rudenich/gulp-es6-boilerplate",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.4.3"
+  }
+}
