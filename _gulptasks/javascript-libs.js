@@ -18,7 +18,7 @@ export default ()=>{
 
     libsList.push(paths.src.js_libs);
     
-    gulp.src(libsList)
+    return gulp.src(libsList)
         .pipe(order(orderLibsList,{ base: './' }))
         .pipe(env.production(uglify()))
         .pipe(concat('libs.js'))
